@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitnungan dasar</title>
+</head>
+<body>
+
+    <p id="pesan"></p>
+    <p id="hasil"></p>
+    <!-- <script src=""></script> -->
+    <script>
+        // Variabel = sebuah penampung atau wadah nilai yang akan kita masukan
+        // dibawah ini adalah visibility
+        // const = nilai yang tetap
+        // var = nilai yang bisa diubah
+        // let = sama dengan var, cuma versi lama
+
+        const nama_depan = "Bejo";
+        const nama_belakang = "Paijo";
+        console.log("nama saya adalah :" +" "+ nama_depan + " " + nama_belakang);
+        console.log(`Nama Saya Adalah : ${nama_depan} ${nama_belakang}`);    //-> lebih simple
+        
+        let nama = "Siti"
+        let alamat = "Jl. Kecubung"
+        let pesan = `Haloo nama saya ${nama}, saya tinggal di ${alamat}`
+        let angka1 = 8
+        let angka2 = 5
+        let hasil = angka1 + angka2;
+
+        document.getElementById("hasil").innerHTML = hasil ;
+        document.getElementById("pesan").innerHTML = pesan ;
+        console.log(`Hasilnya adalah : ${angka1} + ${angka2} =`, (angka1 + angka2));
+        console.log(`Hasilnya adalah : ${angka1} + ${angka2} =`, (angka1 - angka2));
+        console.log(`Hasilnya adalah : ${angka1} + ${angka2} =`, (angka1 * angka2));
+        console.log(`Hasilnya adalah : ${angka1} + ${angka2} =`, (angka1 / angka2));
+        
+        console.log(`Hasilnya adalah : ${angka1} + ${angka2} =`, (angka1 % angka2)); // -> sisa bagi (Modulus)
+        
+        // document.write(pesan);
+        // console.log(`Biodata : ${nama}, alamat ${alamat}`);
+        
+    </script>
+</body>
+</html>
