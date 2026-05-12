@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+    <style>
+        .text-succes 
+        {
+            color: rgb(255, 40, 40);
+            font-size: 20px;
+            font-weight: bold ;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputNama" class="" placeholder="Masukan nama anda" value="">
+    <button id="btn-sapa">Sapa nyong!!</button>
+
+    <h2 id="teks-sapaan" style="color: rgb(15, 230, 26);">Duarr</h2>
+
+    <br>
+    <br>
+
+    <ul id="daftar-belanja">
+        <li>Apel</li>
+        <li>Jeruk</li>
+        <li>Nanas</li>
+    </ul>
+    <button id="tambah-buah">Tambah Belanja</button>
+
+    <script>
+        // event handling + DOM 
+        // #:id , class: . element/Tag: h1
+
+        const btn_sapa = document.getElementById('btn-sapa');
+        const daftar_belanja = document.getElementById('daftar-belanja')
+        btn_sapa.addEventListener('click', function () {
+            // Mau melakukan apa ketika di klik
+            const input_nama = document.getElementById('inputNama').value;
+            console.log(input_nama);
+            const teks_sapaan = document.getElementById('teks-sapaan');
+
+            console.dir(teks_sapaan);
+
+            teks_sapaan.innerText = `Haloo, Selamat datang ${input_nama}`;
+
+            // teks_sapaan.style.color = "red";
+            // teks_sapaan.style.fontSize = "18px"
+            // teks_sapaan.style.fontWeight = "bold"
+            teks_sapaan.classList.add('text-succes')
+            // teks_sapaan.innerText = "Haloo, Selamat datang" + input_nama;
+            
+        });
+
+        const tambah_buah = document.getElementById('tambah-buah');
+        tambah_buah = addEventListener('click', () => {
+            // appendChild :  cukup melanjutkan bangunan dari yang sudah ada
+            // innerHTML : Perombakan semua, baru kita buat tujuan kita dari awal
+
+            let li_baru = document.createElement('li');
+            li_baru.innerText = "kates"
+            // daftar_belanja.innerHTML += " <li>Gedhang</li>"
+            daftar_belanja.appendChild(li_baru)
+        });
+
+        // btn_sapa.addEventListener('clik', () => {}) == arrow function
+    </script>
+</body>
+</html>

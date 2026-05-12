@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let nama = "";
+        var name = "";
+
+        var hewan = "wedus";
+        if (true) {
+            var hewan ="celeng";
+        }
+
+        var hewan ="buaya";
+
+        console.log(hewan);
+
+        console.log(nama)
+        nama ="bejo"
+
+        console.log(name);
+        var name = "wawan";
+
+        const a = 10;
+        console.log(a); // 10
+        a = 22
+        console.log(a); // error, karena const itu nilai tetap
+
+        // parse : merubah tipe data, stirng menjadi integer dan integer menjadi string.
+
+        const angka1 = "1";
+        const angka2 = "2";
+        const total = parseInt(angka1) + parseInt(angka2); //ini sudah dijadikan int, dan hasilnya bisa menjadi penjumlahan angka
+
+        const nama_depan = "Bejo";
+        const nama_belakang = "Paijo";
+        const nama_lengkap = nama_depan +" "+ nama_belakang;
+        console.log(total);
+        console.log(nama_lengkap);
+        
+        let teksUmur = "25"; //string
+        let angkaUmur = parseInt(teksUmur); //int
+
+        console.log(teksUmur + 5); // 255
+        console.log(angkaUmur + 5); // 25 + 5 = 30
+
+        // JSON.parse
+        // JSON : Javascript Object notation
+        // Server akan mengirim data bertipe string lalu js client/fe nangkep dan diubah jadi JSON (object)
+        //  object di JSON /js/fe : (.) dataserverteks.nama
+        let dataServerTeks = '{"nama": "budi", "umur " : 25, "kota" : "Jakarta"}';
+
+        console.log(dataServerTeks.nama);
+        let dataUser = JSON.parse(dataServerTeks)
+        console.log(dataUser.nama);
+
+        // ES (ecma Script) 6
+        let budi = "tes budi";
+        let sudarsono = "tes sudarsono";
+        let gabungin = budi +" "+ sudarsono;
+        // template literal
+        // //  ``: "" : ''
+
+        console.log("Selamat Datang, " +gabungin+ ", Pemain Sepak bola"); 
+        console.log(`Selamat datang, ${budi} ${sudarsono}, Pemain sepak bola`);
+        console.log(budi); // budi sudarsono
+        console.log(sudarsono);// budi sudarsono
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
