@@ -13,6 +13,11 @@
         2. Multi dimensi
         3. Array Object
     -->
+    <div class="mb-3">
+        <label for="">Nama</label>
+        <input type="text" id="input-nama" placeholder="Masukan Nama...">
+    </div>
+    <button id="btn-tambah">Tambah Data</button>
 
     <table border="1" width ="100%" style="border-color: red; ">
         <thead>
@@ -116,6 +121,24 @@
         }
 
         get_data_siswa();
+
+        const btn_tambah = document.getElementById('btn-tambah');
+        const input_nama = document.getElementById('input-nama');
+        btn_tambah.addEventListener('click', function () {
+            // push () : memasukkan data ke dalam array
+            daftar_siswa.push({
+                nama: input_nama.value,
+                jenis_kelamin:""  ,
+                umur:""  ,
+                alamat:""  ,
+            })
+
+            get_data_siswa();
+
+            input_nama.value = "";
+            
+        });
+
         tbody_siswa.addEventListener("click", (event) => {
             if (event.target.classList.contains('btn-hapus')) {
                 let index_data =event.target.getAttribute('data-index');

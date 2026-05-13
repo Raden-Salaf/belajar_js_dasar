@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Change</title>
+</head>
+<body>
+    <label for="">Pilih Suami Orang</label>
+    <select name="" id="pilih-tema">
+        <option value="">--- Pilih Satu Tema</option>
+        <option value="terang">Terang</option>
+        <option value="gelap">Gelap</option>
+        <option value="biru">Biru</option>
+        <option value="merah">Merah</option>
+    </select>
+
+    <h2 id="teks-status">Anda belum memilih tema</h2>
+
+    <script>
+        // Change: Ketika pengguna benar" memilih si opsi yang ada
+
+        const pilih_tema = document.getElementById('pilih-tema');
+        const teks_status = document.getElementById('teks-status');
+
+        const body = document.querySelector('body')
+
+        pilih_tema.addEventListener('change', (event) => {
+            console.log(event);
+            let tema_value = event.target.value;
+            if(tema_value == ""){
+                teks_status.innerText = "Anda belom memilih tema";
+                body.style.backgroundColor = "white";
+                body.style.color = "black"
+                return; //stop prosess
+            }
+
+            if(tema_value == "terang"){
+                teks_status.innerText = "Matahari Bersinar!! Anda di tema terang"
+                body.style.backgroundColor = "yellow"
+                body.style.color = "black"
+                body.style.textAlign ="left"
+            } else if(tema_value == "gelap"){
+                teks_status.innerText = "Waktunya Tidur! Anda di tema gelap"
+                body.style.backgroundColor = "black"
+                body.style.color = "white"
+            } else if(tema_value == "biru"){
+                teks_status.innerText = "Koen kelelep! Anda di tema biru"
+                body.style.backgroundColor = "blue"
+                body.style.color = "white"
+                body.style.textAlign = "right"
+                return;
+            } else if(tema_value == "merah"){
+                teks_status.innerText = "Inget Neraka !!!! Anda di tema merah"
+                body.style.backgroundColor = "red"
+                body.style.color = "white"
+                body.style.textAlign = "center"
+            }
+            
+        });
+    </script>
+</body>
+</html>
