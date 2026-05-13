@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Javascript</title>
+</head>
+<body>
+    <!-- 
+        array di javascript
+        Array itu sebuah tipe data yang bisa menampung banyak nilai, array ada bebrapa jenis : 
+        1. Satu dimensi
+        2. Multi dimensi
+        3. Array Object
+    -->
+
+    <table border="1" width ="100%" style="border-color: red; ">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Jenis Kelamin</th>
+                <th>Umur</th>
+                <th>Alamat</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="table-siswa" style="color: blue; text-align: center; font-size: bold; font-family: Arial, Helvetica, sans-serif;">
+
+        </tbody>
+    </table>
+
+    <script>
+        // Berisi kumpulan string
+        let daftar_buah = ["Apel", "Nanas", "Semongko", "Anggur"];
+        // Berisi kumpulan number(INT -> angka)
+        let daftar_harga = [10000, 12000, 8000, 500000]
+        // array mix (campuran)
+        let mix_harga_buah = ["Apel", 10000, "Nanas", 12000, "Semongko", 8000, "Anggur", 50000]
+
+        //  0,1,2,3 -> index dimulai dari 0
+        console.log(daftar_buah[3]); // index ke-3 adalah Anggur -> karena dimulai dari 0
+        console.log(daftar_harga[3]); // sama aja 
+        
+        // Multi Dimensi
+
+        let peserta = [
+            [
+                "Reza",
+                "10",
+                "Bekasi",
+                "Pria"
+            ],
+            [
+                "Bejo",
+                "18",
+                "Oslo",
+                "Transgender"
+            ],
+        ];
+
+        console.log(peserta);
+        console.log(peserta [0][3]);
+        console.log(peserta [1][2]);
+
+        let daftar_siswa = [
+            {
+                nama: "Bejo Paijo",
+                umur: "18",
+                alamat: "Oslo",
+                jenis_kelamin: "Transgender"
+            },
+            {
+                nama: "Budi sudrajat",
+                umur: "18",
+                alamat: "Ambon",
+                jenis_kelamin: "Pria"
+            },
+            {
+                nama: "sukijat",
+                umur: "18",
+                alamat: "Lebak Bulus",
+                jenis_kelamin: "Pria"
+            },
+        ]
+        console.log(daftar_siswa); 
+        console.log(daftar_siswa[0].nama,);
+        console.log(daftar_siswa [1].nama);
+        console.log(daftar_siswa [2] .nama, );
+        
+
+        function call_name() 
+        {    
+            return "Bejo";
+        }
+
+        const tbody_siswa = document.getElementById('table-siswa')
+        function get_data_siswa ()
+        {
+            tbody_siswa.innerHTML = "";
+
+            for(let i = 0; i < daftar_siswa.length; i++){
+                let baris_baru = document.createElement('tr'); // <tr></tr>
+                baris_baru.innerHTML = 
+                `<td>${daftar_siswa[i].nama}</td>
+                <td>${daftar_siswa[i].jenis_kelamin}</td>
+                <td>${daftar_siswa[i].umur}</td>
+                <td>${daftar_siswa[i].alamat}</td>
+                <td><button class='btn-hapus' data-index="${i}">Hapus</button></td>`
+                
+
+                console.log(baris_baru);
+                
+                tbody_siswa.appendChild(baris_baru);
+            }
+
+        }
+
+        get_data_siswa();
+        tbody_siswa.addEventListener("click", (event) => {
+            if (event.target.classList.contains('btn-hapus')) {
+                let index_data =event.target.getAttribute('data-index');
+
+                daftar_siswa.splice(index_data,1)
+                // event.target.ParentElement.ParentElement();
+                get_data_siswa();
+            }
+        })
+
+    </script>
+</body>
+</html>
